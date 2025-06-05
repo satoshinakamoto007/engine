@@ -16,7 +16,9 @@
     "build-declaration": "gulp build-declarations",
     "build-api-json": "gulp build-api-json -i index.ts -o ./3d-api-docs/tempJson",
     "build-api": "npm run build-api-json && gulp build-3d-api -i index.ts -o ./3d-api-docs -j ./3d-api-docs/tempJson",
-    "test": "gulp test"
+    "test": "gulp test",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -40,9 +42,9 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "fs-extra": "^7.0.1",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "http-server": "^0.12.3",
-    "jest": "^26.6.3",
+    "jest": "^27.0.0",
     "spectorjs": "^0.9.15",
     "stats.js": "^0.17.0",
     "ts-jest": "^26.5.4",
@@ -57,6 +59,8 @@
     "@cocos/box2d": "1.0.1",
     "@cocos/cannon": "1.2.3",
     "@cocos/dragonbones-js": "^1.0.1",
-    "@cocos/physx": "1.0.2"
-  }
+    "@cocos/physx": "1.0.2",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
